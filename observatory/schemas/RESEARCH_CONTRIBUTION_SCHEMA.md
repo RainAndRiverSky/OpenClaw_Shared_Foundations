@@ -148,6 +148,25 @@ source reference is required.
 substantiate this contribution. Same path-safety rules as `sourceReferences`.
 Empty array when no specific evidence records are cited.
 
+### canonicalEvidenceRef
+
+**Type:** string or null
+**Required:** no
+**Description:** Optional namespaced reference to a single resident-owned
+canonical evidence artifact that this contribution is directly linked to.
+Format: `residentId:artifactId` as defined in the Canonical Evidence Contract
+(see [`CANONICAL_EVIDENCE_CONTRACT.md`](CANONICAL_EVIDENCE_CONTRACT.md)).
+
+This field links the contribution to canonical evidence without transferring
+ownership of that evidence. The evidence remains in the originating resident
+repository. Populating this field does not promote the evidence into the
+Observatory or make the contribution an authoritative copy of the evidence.
+
+Null when this contribution does not correspond to a specific canonical evidence
+artifact. When populated, the referenced artifact must exist in the originating
+resident's evidence store and must have `evidenceState` of `canonical` at
+the time the contribution is submitted.
+
 ## Epistemic Classification
 
 ### confidence
